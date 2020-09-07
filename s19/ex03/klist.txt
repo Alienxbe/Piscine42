@@ -1,0 +1,5 @@
+Credentials cache: API:92D2BC23-364D-42B2-A848-AEA2AAA18818
+        Principal: mykman@S19.BE
+
+  Issued                Expires               Principal
+Sep  7 15:05:11 2020  Sep  8 01:05:00 2020  krbtgt/S19.BE@S19.BE
