@@ -1,3 +1,3 @@
 #!/bin/sh
 
-ifconfig -a | grep ether | sed /autoselect/d | cut -c8-24
+ifconfig -a | grep -i ether | sed /autoselect/d | cut -c8-24
