@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/10 13:19:37 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/10 18:11:17 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/10 16:44:54 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/10 17:56:21 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,41 +17,28 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_show_number(char a, char b, char c)
+void	ft_print_comb2(void)
 {
-	
-	else
-	{
-		write(1, "\n", 1);
-	}
-}
+	int n1;
+	int n2;
 
-void	ft_print_comb(void)
-{
-	char i;
-	char j;
-	char k;
-
-	i = '0';
-	while (i <= '9')
+	n1 = 0;
+	while (n1 < 100)
 	{
-		j = i + 1;
-		while (j <= '9')
+		n2 = n1 + 1;
+		while (n2 < 100)
 		{
-			k = j + 1;
-			while (k <= '9')
+			ft_putchar('0' + n1 / 10);
+			ft_putchar('0' + n1 % 10);
+			ft_putchar(' ');
+			ft_putchar('0' + n2 / 10);
+			ft_putchar('0' + n2 % 10);
+			if (n1 != 98 || n2 != 99)
 			{
-				ft_putchar(i);
-				ft_putchar(j);
-				ft_putchar(k);
-				if (i != '7' || j != '8' || k != '9')
-				{
-					write(1, ", ", 2);
-				}
-				k++;
+				write(1, ", ", 2);
 			}
-			j++;
+			n2++;
 		}
-		i++;
+		n1++;
 	}
 }
