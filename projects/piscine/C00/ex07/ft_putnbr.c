@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/10 13:19:37 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/11 14:31:24 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/11 08:31:06 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/11 09:20:51 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,37 +17,23 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	show_number(char i, char j, char k)
+void	ft_putnbr(int nb)
 {
-	ft_putchar(i);
-	ft_putchar(j);
-	ft_putchar(k);
-	if (i != '7' || j != '8' || k != '9')
-	{
-		write(1, ", ", 2);
-	}
-}
+	unsigned int n;
 
-void	ft_print_comb(void)
-{
-	char i;
-	char j;
-	char k;
-
-	i = '0';
-	while (i <= '9')
+	if (nb < 0)
 	{
-		j = i + 1;
-		while (j <= '9')
-		{
-			k = j + 1;
-			while (k <= '9')
-			{
-				show_number(i, j, k);
-				k++;
-			}
-			j++;
-		}
-		i++;
+		ft_putchar('-');
+		n = -nb;
 	}
+	else
+	{
+		n = nb;
+	}
+	if (n > 9)
+	{
+		ft_putnbr(n / 10);
+		n %= 10;
+	}
+	ft_putchar('0' + n);
 }
