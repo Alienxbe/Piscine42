@@ -6,25 +6,18 @@
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 23:00:16 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/11 23:07:25 by mykman           ###   ########.fr       */
+/*   Updated: 2020/09/12 20:58:09 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_strlen(char *str)
 {
-	int n;
-	int i;
+	int c;
 
-	n = 0;
-	i = 1;
-	while (i == 1)
+	c = 0;
+	while (str[c])
 	{
-		if (str[n] == 0)
-		{
-			i = 0;
-			n--;
-		}
-		n++;
+		c++;
 	}
-	return (n);
+	return (c);
 }

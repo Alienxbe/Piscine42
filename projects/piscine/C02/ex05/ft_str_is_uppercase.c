@@ -6,22 +6,20 @@
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 16:36:23 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/12 16:37:18 by mykman           ###   ########.fr       */
+/*   Updated: 2020/09/12 22:22:35 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_str_is_uppercase(char *str)
 {
 	int c;
-	int out;
 
 	c = 0;
-	out = 1;
-	while (str[c] != 0)
+	while (str[c])
 	{
-		if (!(str[c] > 64 && str[c] < 91))
-			out = 0;
+		if (!(str[c] >= 'A' && str[c] <= 'Z'))
+			return (0);
 		c++;
 	}
-	return (out);
+	return (1);
 }

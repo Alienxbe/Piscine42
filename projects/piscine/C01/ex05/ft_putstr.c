@@ -6,7 +6,7 @@
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 22:46:05 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/11 22:55:23 by mykman           ###   ########.fr       */
+/*   Updated: 2020/09/12 20:49:08 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,12 @@
 
 void	ft_putstr(char *str)
 {
-	int i;
 	int c;
 
-	i = 1;
 	c = 0;
-	while (i == 1)
+	while (str[c])
 	{
-		if (str[c] == 0)
-		{
-			i = 0;
-		}
-		else
-		{
-			write(1, str + c, 1);
-		}
+		write(1, str + c, 1);
 		c++;
 	}
 }

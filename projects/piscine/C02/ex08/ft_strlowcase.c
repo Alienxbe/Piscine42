@@ -6,20 +6,20 @@
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 19:31:15 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/12 19:32:13 by mykman           ###   ########.fr       */
+/*   Updated: 2020/09/12 22:38:53 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strlowcase(char *str)
 {
-	char *s;
+	int c;
 
-	s = str;
-	while (*s)
+	c = 0;
+	while (str[c])
 	{
-		if (*s >= 'A' && *s <= 'Z')
-			*s += 32;
-		s++;
+		if (str[c] >= 'A' && str[c] <= 'Z')
+			str[c] += 32;
+		c++;
 	}
 	return (str);
 }

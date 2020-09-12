@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/12 07:53:54 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/12 20:34:59 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/12 20:49:44 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/12 20:59:25 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
-{
-	int c;
+#include <stdio.h>
 
-	c = 0;
-	while (src[c])
-	{
-		dest[c] = src[c];
-		c++;
-	}
-	return (dest);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+
+int		main(void)
+{
+	printf("%i\n", ft_strlen("Bonjour"));
+	return (0);
 }

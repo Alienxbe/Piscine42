@@ -6,22 +6,20 @@
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/12 16:31:55 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/12 16:34:13 by mykman           ###   ########.fr       */
+/*   Updated: 2020/09/12 22:23:09 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_str_is_lowercase(char *str)
 {
 	int c;
-	int out;
 
 	c = 0;
-	out = 1;
-	while (str[c] != 0)
+	while (str[c])
 	{
-		if (!(str[c] > 96 && str[c] < 123))
-			out = 0;
+		if (!(str[c] >= 'a' && str[c] <= 'z'))
+			return (0);
 		c++;
 	}
-	return (out);
+	return (1);
 }
