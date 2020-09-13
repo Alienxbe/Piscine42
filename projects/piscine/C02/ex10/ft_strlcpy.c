@@ -1,43 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/12 08:08:07 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/13 11:33:41 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/13 14:41:24 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/13 22:03:18 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int				ft_strlen(char *str)
 {
 	int c;
 
 	c = 0;
 	while (str[c])
-	{
 		c++;
-	}
 	return (c);
 }
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int c;
 
 	c = 0;
-	while (c < n)
+	while (src[c])
 	{
-		if (c >= (unsigned int)ft_strlen(src))
+		if (c == size - 1)
 		{
 			dest[c] = 0;
+			return ((unsigned int)ft_strlen(src));
 		}
-		else
-		{
-			dest[c] = src[c];
-		}
+		dest[c] = src[c];
 		c++;
 	}
-	return (dest);
+	return ((unsigned int)ft_strlen(src));
 }
