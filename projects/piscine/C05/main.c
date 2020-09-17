@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 22:59:45 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/15 22:08:42 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/16 19:20:23 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/17 11:13:43 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	unsigned int c;
+#include <stdio.h>
 
-	c = 0;
-	while (s1[c] == s2[c] && s1[c] && c < n)
-		c++;
-	if (c == n)
-		return (0);
-	return (s1[c] - s2[c]);
+int		ft_recursive_factorial(int nb);
+int		ft_iterative_factorial(int nb);
+int		ft_iterative_power(int nb, int power);
+int		ft_recursive_power(int nb, int power);
+int		ft_fibonacci(int index);
+int		ft_sqrt(int nb);
+int		ft_is_prime(int nb);
+int		ft_find_next_prime(int nb);
+
+int		main(void)
+{
+	printf("%d\n", ft_find_next_prime(15));
+	return (0);
 }

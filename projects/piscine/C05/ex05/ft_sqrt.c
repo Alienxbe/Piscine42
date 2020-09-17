@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 22:59:45 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/15 22:08:42 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/16 22:50:44 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/17 11:06:13 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int		ft_sqrt(int nb)
 {
-	unsigned int c;
+	unsigned int i;
 
-	c = 0;
-	while (s1[c] == s2[c] && s1[c] && c < n)
-		c++;
-	if (c == n)
+	i = 0;
+	if (nb < 0)
 		return (0);
-	return (s1[c] - s2[c]);
+	while (i * i < (unsigned int)nb)
+		i++;
+	if (i * i == (unsigned int)nb)
+		return (i);
+	else
+		return (0);
 }

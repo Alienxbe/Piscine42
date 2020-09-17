@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 22:59:45 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/15 22:08:42 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/17 11:07:10 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/17 11:12:05 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int		ft_is_prime(int nb)
 {
-	unsigned int c;
+	int i;
 
-	c = 0;
-	while (s1[c] == s2[c] && s1[c] && c < n)
-		c++;
-	if (c == n)
-		return (0);
-	return (s1[c] - s2[c]);
+	i = 1;
+	if (nb < 2)
+		return(0);
+	if (nb == 2)
+		return (1);
+	while (++i < nb / 2)
+		if (nb % i == 0)
+			return (0);
+	return (1);
+}
+
+int		ft_find_next_prime(int nb)
+{
+	while (1)
+	{
+		if (ft_is_prime(nb))
+			return (nb);
+		nb++;
+	}
 }

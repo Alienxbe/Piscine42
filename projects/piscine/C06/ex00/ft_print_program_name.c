@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 22:59:45 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/15 22:08:42 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/17 11:34:42 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/17 12:04:11 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	unsigned int c;
+#include <unistd.h>
 
-	c = 0;
-	while (s1[c] == s2[c] && s1[c] && c < n)
-		c++;
-	if (c == n)
-		return (0);
-	return (s1[c] - s2[c]);
+int		main(int argc, char **argv)
+{
+	(void)argc;
+	while (**argv)
+		write(1, (*argv)++, 1);
+	write(1, "\n", 1);
+	return (0);
 }

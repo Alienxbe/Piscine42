@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 22:59:45 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/15 22:08:42 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/16 19:35:41 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/16 19:43:37 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int		ft_iterative_factorial(int nb)
 {
-	unsigned int c;
+	int n;
 
-	c = 0;
-	while (s1[c] == s2[c] && s1[c] && c < n)
-		c++;
-	if (c == n)
+	n = nb;
+	if (nb <= 0)
 		return (0);
-	return (s1[c] - s2[c]);
+	while (--nb)
+		n *= nb;
+	return (n);
 }

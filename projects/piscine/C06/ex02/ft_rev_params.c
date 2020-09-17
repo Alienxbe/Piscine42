@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 22:59:45 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/15 22:08:42 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/17 12:05:48 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/17 12:14:01 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	unsigned int c;
+#include <unistd.h>
 
-	c = 0;
-	while (s1[c] == s2[c] && s1[c] && c < n)
-		c++;
-	if (c == n)
-		return (0);
-	return (s1[c] - s2[c]);
+void	ft_putstr(char *str)
+{
+	while(*str)
+		write(1, str++, 1);
+}
+
+int		main(int argc, char **argv)
+{
+	while (--argc)
+	{
+		ft_putstr(argv[argc]);
+		write(1, "\n", 1);
+	}
+	return (0);
 }
