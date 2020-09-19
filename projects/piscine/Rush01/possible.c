@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   possible.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/10 00:41:12 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/19 12:13:10 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/19 15:53:58 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/19 16:06:21 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int		possible(int x, int y, int n, int grid[4][4])
 {
-	write(1, &c, 1);
-}
+	int i;
 
-int		main(void)
-{
-	ft_putchar('a');
-	return(0);
+	i = -1;
+	while (++i < 4)
+	{
+		if (grid[y][i] == n || grid[i][x] == n)
+			return (0);
+	}
+	return (1);
 }

@@ -1,24 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/10 00:41:12 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/19 12:13:10 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/19 14:56:16 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/19 15:40:06 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int		ft_strlen(char *str)
 {
-	write(1, &c, 1);
+	int i;
+	i = 0;
+	while (*str++)
+		i++;
+	return (i);
 }
 
-int		main(void)
+int		ft_str_to_tab(char *str, int *tab)
 {
-	ft_putchar('a');
-	return(0);
+	int n;
+	int i;
+
+	if (ft_strlen(str) != 31)
+		return (0);
+	i = 0;
+	while (*str)
+	{
+		if ((*str >= '1' && *str <= '4') || *str == ' ')
+		{
+			if (*str >= '1' && *str <= '4')
+			{
+				n = *str - '0';
+				tab[i++] = n;
+			}
+			str++;
+		}
+		else
+			return (0);
+	}
+	return (16);
 }
