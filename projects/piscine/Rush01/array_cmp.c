@@ -1,45 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_input.c                                      :+:      :+:    :+:   */
+/*   array_cmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/19 14:56:16 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/19 15:40:06 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/20 18:11:51 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/20 18:38:28 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int		array_cmp(int l1[16], int l2[16])
 {
 	int i;
-	i = 0;
-	while (*str++)
-		i++;
-	return (i);
-}
 
-int		ft_str_to_tab(char *str, int *tab)
-{
-	int n;
-	int i;
-
-	if (ft_strlen(str) != 31)
-		return (0);
-	i = 0;
-	while (*str)
+	i = -1;
+	while (++i < 16)
 	{
-		if ((*str >= '1' && *str <= '4') || *str == ' ')
-		{
-			if (*str >= '1' && *str <= '4')
-			{
-				n = *str - '0';
-				tab[i++] = n;
-			}
-			str++;
-		}
-		else
+		if (l1[i] != l2[i])
 			return (0);
 	}
-	return (16);
+	return (1);
 }

@@ -5,60 +5,49 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/19 16:07:28 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/19 18:03:22 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/20 16:08:55 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/20 18:20:03 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+int		possible(int grid[4][4], int pos, int n);
+int		array_cmp(int l1[16], int l2[16]);
+int		*generate_input(int grid[4][4]);
+int		solve(int grid[4][4], int input[16]);
 
-int		possible(int x, int y, int n, int grid[4][4]);
-
-void	print_grid(int grid[4][4])
+int		test_possibilities(int grid[4][4], int pos, int input[16])
 {
-	int x;
-	int y;
-
-	y = -1;
-	while (++y < 4)
-	{
-		x = -1;
-		while (++x < 4)
-			printf("%d ", grid[y][x]);
-		printf("\n");
-	}
-	printf("\n--------------------\n");
-}
-
-int		solve(int grid[4][4])
-{
-	int x;
-	int y;
 	int i;
 
-	y = -1;
-	while (++y < 4)
+	i = 0;
+	while (++i < 5)
 	{
-		x = -1;
-		while (++x < 4)
+		if (possible(grid, pos, i))
 		{
-			if (grid[y][x] == 0)
-			{
-				i = 0;
-				while (++i < 5)
-				{
-					if (possible(x, y, i, grid))
-					{
-						grid[y][x] = i;
-						if (solve(grid))
-							return (1);
-						grid[y][x] = 0;
-					}
-				}
-				return (0);
-			}
+			grid[pos / 4][pos % 4] = i;
+			if (solve(grid, input))
+				return (1);
+			grid[pos / 4][pos % 4] = 0;
 		}
 	}
-	print_grid(grid);
+	return (0);
+}
+
+int		solve(int grid[4][4], int input[16])
+{
+	int pos;
+
+	pos = -1;
+	while (++pos < 16)
+	{
+		if (grid[pos / 4][pos % 4] == 0)
+		{
+			if (test_possibilities(grid, pos, input))
+				return (1);
+			return (0);
+		}
+	}
+	if (array_cmp(input, generate_input(grid)))
+		return (1);
 	return (0);
 }

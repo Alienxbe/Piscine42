@@ -5,17 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/19 08:29:42 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/19 17:32:32 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/20 15:36:25 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/20 21:21:35 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
 
-int		verif_possible(int *tab);
-int		ft_str_to_tab(char *str, int *tab);
-int		solve(int grid[4][4]);
+void	fill_grid(int grid[4][4]);
+void	print_grid(int grid[4][4]);
+int		str_to_tab(char *str, int *tab);
+int		is_input_valid(int *input);
+int		solve(int grid[4][4], int input[16]);
 
 void	ft_putstr(char *str)
 {
@@ -23,27 +24,23 @@ void	ft_putstr(char *str)
 		write(1, str++, 1);
 }
 
-int	main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
 	int input[16];
-	int x;
-	int y;
 	int grid[4][4];
 
-	if (argc != 2 || !ft_str_to_tab(argv[1], input) || !verif_possible(input))
+	if (argc != 2 || !str_to_tab(argv[1], input) || !is_input_valid(input))
 	{
-		ft_putstr("Error");
+		ft_putstr("Error\n");
 		return (1);
 	}
-	y = -1;
-	while (++y < 4)
+	fill_grid(grid);
+	solve(grid, input);
+	if (grid[0][0] == 0)
 	{
-		x = -1;
-		while (++x < 4)
-		{
-			grid[y][x] = 0;
-		}
+		ft_putstr("Error\n");
+		return (1);
 	}
-	solve(grid);
+	print_grid(grid);
 	return (0);
 }
