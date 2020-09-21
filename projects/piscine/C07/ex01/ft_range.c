@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/21 18:51:11 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/21 23:33:22 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/21 15:44:48 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/21 15:53:33 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stdlib.h>
 
-char	*ft_strdup(char *src);
-int		*ft_range(int min, int max);
-int		ft_ultimate_range(int **range, int min, int max);
-char	*ft_strjoin(int size, char **strs, char *sep);
-char	**ft_split(char *src, char *charset);
-
-int		main(void)
+int		*ft_range(int min, int max)
 {
-	char src[] = "Bonjour Tchoupe comment vas-tu";
-	char **tab;
+	int *range;
+	int i;
 
-	tab = ft_split(src, " ");
-	printf("%s\n", tab[0]);
-	return (0);
-
-
+	if (min >= max)
+		return (0);
+	range = malloc(sizeof(int) * (max - min));
+	i = -1;
+	while (++i < max - min)
+		range[i] = min + i;
+	return (range);
 }

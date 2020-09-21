@@ -6,7 +6,7 @@
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 09:21:40 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/21 15:39:52 by mykman           ###   ########.fr       */
+/*   Updated: 2020/09/21 19:02:15 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ int		ft_strlen(char *str)
 	i = 0;
 	while (*str++)
 		i++;
-	return i;
+	return (i);
 }
 
 char	*ft_strdup(char *src)
 {
-	char *dest;
-	int i;
+	char	*dest;
+	int		i;
 
 	dest = malloc(sizeof(*dest) * ft_strlen(src) + 1);
 	i = -1;
