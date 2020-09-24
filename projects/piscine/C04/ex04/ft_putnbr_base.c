@@ -61,7 +61,7 @@ void	ft_putnbr_base(int nbr, char *base)
 		else
 			n = nbr;
 		if (n > (unsigned int)n_base - 1)
-			ft_putnbr_base(nbr / n_base, base);
+			ft_putnbr_base(n / n_base, base);
 		ft_putchar(base[n % n_base]);
 	}
 }

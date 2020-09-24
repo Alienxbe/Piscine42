@@ -10,39 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		expo(int base, int exp)
+int		ft_isspace(char c)
 {
-	int i;
-	int n;
-
-	i = -1;
-	n = 1;
-	while (++i < exp)
-		n *= base;
-	return (n);
+	if (c == '\t' || c == '\n' || c == '\v'
+		|| c == '\f' || c == '\r' || c == ' ')
+		return (1);
+	return (0);
 }
 
 int		ft_atoi(char *str)
 {
 	int n;
 	int exp;
-	int minus_count;
+	int minus;
 
 	n = 0;
 	exp = 0;
-	minus_count = 0;
-	while (*str == ' ' || *str == '+' || *str == '-')
+	minus = 1;
+	while (ft_isspace(*str) || *str == '+' || *str == '-')
 	{
 		if (*str++ == '-')
-			minus_count++;
+			minus *= -1;
 	}
 	str--;
 	while (*++str >= '0' && *str <= '9')
-	{
-	}
-	while (*--str >= '0' && *str <= '9')
-		n += (*str - 48) * expo(10, exp++);
-	if (minus_count % 2)
-		return (-n);
-	return (n);
+		n = n * 10 + (*str - '0');
+	return (n * minus);
 }

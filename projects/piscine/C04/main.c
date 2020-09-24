@@ -22,10 +22,11 @@ int		char_in_str(char c, char *str);
 
 int		main(void)
 {
-	//char base[] = "0";
-	char str[] = "-+-----+-----+-21345";
+	char base[] = "01";
+	//char str[] = "  \f	 \t \v \r-+----+-----+-2130459";
 	
-	printf("%d\n", ft_atoi(str));
-	//ft_putnbr_base(42, base);
+	//printf("%d\n", ft_atoi(str));
+	printf("%d\n", ft_atoi_base("\r\t\v\f      ---++++-+-10011000", base));
+	//ft_putnbr_base(-42, base);
 	return (0);
 }

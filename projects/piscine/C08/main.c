@@ -5,25 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/16 19:20:23 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/23 17:27:03 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/23 09:55:29 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/23 10:17:28 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include "ft_stock_str.h"
 
-int		ft_recursive_factorial(int nb);
-int		ft_iterative_factorial(int nb);
-int		ft_iterative_power(int nb, int power);
-int		ft_recursive_power(int nb, int power);
-int		ft_fibonacci(int index);
-int		ft_sqrt(int nb);
-int		ft_is_prime(int nb);
-int		ft_find_next_prime(int nb);
-int		ft_ten_queens_puzzle(void);
+struct s_stock_str	ft_str_to_struct(char *str);
 
 int		main(void)
 {
-	printf("%d\n", ft_find_next_prime(2147483600));
+	t_stock_str	structure;
+	char		str[] = "Bonjour";
+
+	structure = ft_str_to_struct(str);
+	printf("test");
+	free(structure.copy);
 	return (0);
 }

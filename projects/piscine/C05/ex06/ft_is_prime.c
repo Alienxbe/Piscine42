@@ -6,21 +6,17 @@
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 23:45:05 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/17 11:05:12 by mykman           ###   ########.fr       */
+/*   Updated: 2020/09/23 17:26:44 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 int		ft_is_prime(int nb)
 {
-	int i;
+	if (nb <= 1)
+		return 0;
+	if (n <= 3)
+		return (nb);
 
-	i = 1;
-	if (nb < 2)
-		return(0);
-	if (nb == 2)
-		return (1);
-	while (++i < nb / 2)
-		if (nb % i == 0)
-			return (0);
-	return (1);
+	
 }

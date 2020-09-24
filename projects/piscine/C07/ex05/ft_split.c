@@ -6,11 +6,12 @@
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 22:52:34 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/21 23:34:27 by mykman           ###   ########.fr       */
+/*   Updated: 2020/09/22 14:20:56 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 int		ft_is_separator(char c, char *charset)
 {
@@ -66,7 +67,7 @@ char	**ft_split(char *str, char *charset)
 		while (++j < ft_word_size(str, charset))
 			word[j] = str[j];
 		word[j] = 0;
-		tab[i] = word;
+		tab[++i] = word;
 		str += ft_word_size(str, charset);
 	}
 	return (tab);

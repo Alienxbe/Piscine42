@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/21 18:51:11 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/22 14:22:58 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/22 16:38:18 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/22 18:08:33 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
 
-char	*ft_strdup(char *src);
-int		*ft_range(int min, int max);
-int		ft_ultimate_range(int **range, int min, int max);
-char	*ft_strjoin(int size, char **strs, char *sep);
-char	**ft_split(char *src, char *charset);
+# include <unistd.h>
 
-int		main(void)
-{
-	char src[] = "Bonjour, comment, vas-tu ?";
-	char **tab;
+typedef	int	t_bool;
 
-	tab = ft_split(src, ", ");
-	printf("%s\n", tab[2]);
-	return (0);
+# define FALSE 0
+# define TRUE 1
+# define EVEN_MSG "I have an even number of arguments.\n"
+# define ODD_MSG "I have an odd number of arguments.\n"
+# define SUCCESS 0
+# define EVEN(x) x % 2
 
-
-}
+#endif

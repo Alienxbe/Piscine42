@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/16 19:20:23 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/23 17:27:03 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/22 16:29:48 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/22 16:36:42 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef FT_H
+# define FT_H
 
-int		ft_recursive_factorial(int nb);
-int		ft_iterative_factorial(int nb);
-int		ft_iterative_power(int nb, int power);
-int		ft_recursive_power(int nb, int power);
-int		ft_fibonacci(int index);
-int		ft_sqrt(int nb);
-int		ft_is_prime(int nb);
-int		ft_find_next_prime(int nb);
-int		ft_ten_queens_puzzle(void);
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
 
-int		main(void)
-{
-	printf("%d\n", ft_find_next_prime(2147483600));
-	return (0);
-}
+#endif
