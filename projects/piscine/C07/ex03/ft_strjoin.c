@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 16:11:03 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/21 19:03:25 by mykman           ###   ########.fr       */
+/*   Updated: 2020/09/25 19:35:23 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int		ft_strlen(char *src)
 {
@@ -23,21 +22,30 @@ int		ft_strlen(char *src)
 	return (len);
 }
 
+int		ft_tot_len(int size, char **strs, int len_sep)
+{
+	int i;
+	int tot_len;
+
+	tot_len = 0;
+	i = -1;
+	while (++i < size)
+		tot_len += ft_strlen(strs[i]) + len_sep;
+	return (tot_len);
+}
+
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char	*str;
-	int		tot_len;
 	int		i;
 	int		j;
 	int		l;
 
 	if (size == 0)
 		return ("");
-	tot_len = 0;
-	i = -1;
-	while (++i < size)
-		tot_len += ft_strlen(strs[i]) + ft_strlen(sep);
-	str = malloc(sizeof(char) * (tot_len - ft_strlen(sep) + 1));
+	if (!(str = malloc(sizeof(char)
+		* (ft_tot_len(size, strs, ft_strlen(sep)) - ft_strlen(sep) + 1))))
+		return (0);
 	i = -1;
 	l = 0;
 	while (++i < size)

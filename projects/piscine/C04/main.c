@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 11:01:04 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/19 09:57:43 by mykman           ###   ########.fr       */
+/*   Updated: 2020/09/25 20:31:37 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,6 @@ int		char_in_str(char c, char *str);
 
 int		main(void)
 {
-	char base[] = "01";
-	//char str[] = "  \f	 \t \v \r-+----+-----+-2130459";
-	
-	//printf("%d\n", ft_atoi(str));
-	printf("%d\n", ft_atoi_base("\r\t\v\f      ---++++-+-10011000", base));
-	//ft_putnbr_base(-42, base);
+	printf("%d\n", ft_atoi("\t\v\n\r\f -2147483648"));
 	return (0);
 }

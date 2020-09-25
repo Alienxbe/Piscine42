@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 11:47:13 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/16 14:29:52 by mykman           ###   ########.fr       */
+/*   Updated: 2020/09/25 20:30:56 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,18 @@ int		ft_isspace(char c)
 int		ft_atoi(char *str)
 {
 	int n;
-	int exp;
-	int minus;
+	int sign;
+	int i;
 
 	n = 0;
-	exp = 0;
-	minus = 1;
-	while (ft_isspace(*str) || *str == '+' || *str == '-')
+	sign = 1;
+	i = -1;
+	while (ft_isspace(str[++i]) || str[i] == '+' || str[i] == '-')
 	{
-		if (*str++ == '-')
-			minus *= -1;
+		if (str[i] == '-')
+			sign *= -1;
 	}
-	str--;
-	while (*++str >= '0' && *str <= '9')
-		n = n * 10 + (*str - '0');
-	return (n * minus);
+	while (str[i] >= '0' && str[i] <= '9')
+		n = n * 10 + str[i++] - '0';
+	return (n * sign);
 }

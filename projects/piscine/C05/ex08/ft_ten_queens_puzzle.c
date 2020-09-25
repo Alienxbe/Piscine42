@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ten_queens_puzzle.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/23 11:24:35 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/23 16:47:43 by mykman           ###   ########.fr       */
+/*   Updated: 2020/09/25 19:02:07 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,5 @@ int		ft_ten_queens_puzzle(void)
 	while (++i < 100)
 		board[i / 10][i % 10] = 0;
 	solve(board, 0);
-	return (0);
+	return (g_possibilities);
 }

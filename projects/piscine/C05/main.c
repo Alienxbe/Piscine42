@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/16 19:20:23 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/23 17:27:03 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/24 15:08:32 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/25 14:44:45 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int		ft_ten_queens_puzzle(void);
 
 int		main(void)
 {
-	printf("%d\n", ft_find_next_prime(2147483600));
+	printf("%d\n", ft_find_next_prime(-2147483647));
 	return (0);
 }
