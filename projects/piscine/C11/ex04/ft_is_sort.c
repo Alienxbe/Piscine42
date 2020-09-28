@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/16 11:01:04 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/28 11:01:07 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/28 02:37:05 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/28 04:12:02 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int		ft_strlen(char *str);
-void	ft_putstr(char *str);
-void	ft_putnbr(int nb);
-int		ft_atoi(char *str);
-void	ft_putnbr_base(int nbr, char *base);
-int		ft_atoi_base(char *str, char *base);
-int		char_in_str(char c, char *str);
-
-int		main(void)
+int		ft_is_sort(int *tab, int length, int (*f)(int, int))
 {
-	char test[] = "150";
-	printf("%d\n", ft_atoi_base(test, "0 1"));
-	return (0);
+	int i;
+
+	i = -1;
+	while (++i < length - 1)
+		if ((*f)(tab[i], tab[i + 1]) > 0)
+			return (0);
+	return (1);
 }

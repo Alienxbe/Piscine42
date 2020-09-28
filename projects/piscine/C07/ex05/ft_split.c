@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 22:52:34 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/22 14:20:56 by mykman           ###   ########.fr       */
+/*   Updated: 2020/09/28 11:16:35 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int		ft_is_separator(char c, char *charset)
 {
@@ -56,13 +55,15 @@ char	**ft_split(char *str, char *charset)
 	int		j;
 
 	wc = ft_word_count(str, charset);
-	tab = malloc(sizeof(char *) * wc);
+	if (!(tab = malloc(sizeof(char *) * (wc + 1))))
+		return (0);
 	i = -1;
 	while (*str)
 	{
 		while (*str && ft_is_separator(*str, charset))
 			str++;
-		word = malloc(sizeof(char) * ft_word_size(str, charset));
+		if (!(word = malloc(sizeof(char) * (ft_word_size(str, charset) + 1))))
+			return (0);
 		j = -1;
 		while (++j < ft_word_size(str, charset))
 			word[j] = str[j];
@@ -70,5 +71,6 @@ char	**ft_split(char *str, char *charset)
 		tab[++i] = word;
 		str += ft_word_size(str, charset);
 	}
+	tab[++i] = 0;
 	return (tab);
 }

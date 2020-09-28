@@ -5,34 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/16 11:47:13 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/25 20:30:56 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/26 19:56:57 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/28 06:05:50 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isspace(char c)
-{
-	if (c == '\t' || c == '\n' || c == '\v'
-		|| c == '\f' || c == '\r' || c == ' ')
-		return (1);
-	return (0);
-}
+#include <unistd.h>
 
 int		ft_atoi(char *str)
 {
-	int n;
-	int sign;
-	int i;
+	int neg;
+	int num;
 
-	n = 0;
-	sign = 1;
-	i = -1;
-	while (ft_isspace(str[++i]) || str[i] == '+' || str[i] == '-')
+	neg = 0;
+	num = 0;
+	while ((*str >= 9 && *str <= 13) || *str == ' ')
+		str++;
+	while (*str == '-' || *str == '+')
 	{
-		if (str[i] == '-')
-			sign *= -1;
+		if (*str == '-')
+			neg = !neg;
+		str++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-		n = n * 10 + str[i++] - '0';
-	return (n * sign);
+	while (*str >= '0' && *str <= '9')
+	{
+		num = 10 * num + (*str - '0');
+		str++;
+	}
+	return (neg ? -num : num);
 }

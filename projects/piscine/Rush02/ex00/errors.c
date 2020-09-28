@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/16 11:01:04 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/28 11:01:07 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/27 13:21:08 by rcammaro          #+#    #+#             */
+/*   Updated: 2020/09/27 21:20:45 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "ft.h"
 
-int		ft_strlen(char *str);
-void	ft_putstr(char *str);
-void	ft_putnbr(int nb);
-int		ft_atoi(char *str);
-void	ft_putnbr_base(int nbr, char *base);
-int		ft_atoi_base(char *str, char *base);
-int		char_in_str(char c, char *str);
-
-int		main(void)
+int		error_usage(void)
 {
-	char test[] = "150";
-	printf("%d\n", ft_atoi_base(test, "0 1"));
+	ft_putstr("Usage:\n");
+	ft_putstr("rush-02 [[dictionary] number]\n");
+	return (1);
+}
+
+int		error_stdin(void)
+{
+	ft_putstr("Error: could not read from standard input\n");
+	return (1);
+}
+
+int		dict_error(void)
+{
+	ft_putstr("Dict Error\n");
+	return (0);
+}
+
+void	*error_malloc(void)
+{
+	ft_putstr("Memory allocation error\n");
 	return (0);
 }

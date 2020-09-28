@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
+/*   ft_convert_base2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 16:49:44 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/28 10:59:37 by mykman           ###   ########.fr       */
+/*   Updated: 2020/09/28 08:55:58 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int		check_bad_base(char *base)
 	ptr1 = base - 1;
 	while (*++ptr1)
 	{
-		if ((*ptr1 >= 9 && *ptr1 <= 13) || *ptr1 == '+' || *ptr1 == '-'
-			|| *ptr1 == ' ')
+		if ((*ptr1 >= 9 && *ptr1 <= 13) || *ptr1 == '+' ||
+			*ptr1 == '-' || *ptr1 == ' ')
 			return (1);
 		ptr2 = base - 1;
 		while (*++ptr2)
@@ -56,20 +56,20 @@ int		check_bad_base(char *base)
 int		ft_atoi_base(char *str, char *base)
 {
 	int n;
-	int neg;
+	int sign;
 
 	if (ft_strlen(base) < 2 || check_bad_base(base))
 	{
 		return (0);
 	}
 	n = 0;
-	neg = 0;
+	sign = 1;
 	while ((*str >= 9 && *str <= 13) || *str == ' ')
 		str++;
 	while (*str == '+' || *str == '-')
-		if (*(str++) == '-')
-			neg = !neg;
+		if (*str++ == '-')
+			sign *= -1;
 	while (ft_index(*str, base) != -1)
-		n = n * ft_strlen(base) + ft_index(*(str++), base);
-	return (n ? -n : n);
+		n = n * ft_strlen(base) + ft_index(*str++, base);
+	return (n * sign);
 }
