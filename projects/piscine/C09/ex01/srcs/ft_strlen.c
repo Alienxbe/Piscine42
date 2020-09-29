@@ -1,41 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/27 16:20:59 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/27 21:23:12 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/29 00:58:01 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/29 01:00:54 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_numeric(char *str)
+int		ft_strlen(char *str)
 {
-	int c;
+	int i;
 
-	if (!(str[0] >= '0' && str[0] <= '9'))
-		return (0);
-	c = 0;
-	while (str[c])
-	{
-		if (!((str[c] >= '0' && str[c] <= '9') || str[c] == ' '))
-			return (0);
-		c++;
-	}
-	return (1);
-}
-
-int		ft_str_is_printable(char *str)
-{
-	int c;
-
-	c = 0;
-	while (str[c])
-	{
-		if (!(str[c] > 31 && str[c] < 127))
-			return (0);
-		c++;
-	}
-	return (1);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

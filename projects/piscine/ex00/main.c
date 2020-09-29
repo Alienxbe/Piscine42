@@ -3,35 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcammaro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 16:40:33 by rcammaro          #+#    #+#             */
-/*   Updated: 2020/09/26 20:08:05 by rcammaro         ###   ########.fr       */
+/*   Updated: 2020/09/27 23:08:04 by rcammaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
-
 #include "ft.h"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	char	*dict;
+	char	*nbr;
+	char	*dict_file;
 	t_nbr	*array;
-	char	*number_text;
 
-	dict = read_file("numbers.dict.txt");
-	array = ft_str_to_sdic(dict);
-
-	int	i = 0;
-	while (i < 1000)
+	if (argc > 3)
+		return (error_usage());
+	if (argc == 1)
+		return (error_usage());
+	else
+		nbr = argv[argc - 1];
+	dict_file = (argc == 3) ? argv[1] : "numbers.dict";
+	if (!(array = load_dictionary(dict_file)))
+		return (1);
+	if (!gen_output_text(nbr, array))
 	{
-		number_text = number_to_text(i, array);
-		ft_putstr(number_text);
-		ft_putstr("\n");
-		i++;
+		free_dict(array);
+		return (1);
 	}
-
+	free_dict(array);
+	return (0);
 }

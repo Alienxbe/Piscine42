@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoin.c                                         :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/27 13:15:02 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/27 21:21:12 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/29 02:07:09 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/29 02:11:16 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoin(char *str, int n)
-{
-	int nbr;
+#ifndef FT_H
+# define FT_H
 
-	nbr = 0;
-	while (str && n--)
-	{
-		nbr = nbr * 10 + (*str - '0');
-		str++;
-	}
-	return (nbr);
-}
+#include <unistd.h>
+
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
+int		ft_strcmp(char *s1, char *s2);
+int		ft_strlen(char *str);
+void	ft_swap(int *a, int *b);
+
+#endif

@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_memory.c                                      :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcammaro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/27 15:26:14 by rcammaro          #+#    #+#             */
-/*   Updated: 2020/09/27 18:44:30 by rcammaro         ###   ########.fr       */
+/*   Created: 2020/09/27 13:21:08 by rcammaro          #+#    #+#             */
+/*   Updated: 2020/09/27 23:09:01 by rcammaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft.h"
 
-void	free_dict(t_nbr *array)
+int		error_usage(void)
 {
-	t_nbr *ptr;
-
-	ptr = array;
-	while (ptr->mode != -1)
-	{
-		free(ptr->name);
-		ptr++;
-	}
-	free(array);
+	ft_putstr("Usage:\n");
+	ft_putstr("rush-02 [dictionary] number\n");
+	return (1);
 }
 
-void	free_split(char **array)
+int		dict_error(void)
 {
-	char **ptr;
+	ft_putstr("Dict Error\n");
+	return (0);
+}
 
-	ptr = array;
-	while (*ptr)
-	{
-		free(*ptr);
-		ptr++;
-	}
-	free(array);
+void	*error_malloc(void)
+{
+	ft_putstr("Memory allocation error\n");
+	return (0);
 }

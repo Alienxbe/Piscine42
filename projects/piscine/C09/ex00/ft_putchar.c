@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_dictionary.c                                  :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/27 13:45:13 by rcammaro          #+#    #+#             */
-/*   Updated: 2020/09/27 21:25:33 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/10 00:41:12 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/29 00:53:18 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#include <unistd.h>
 
-t_nbr	*load_dictionary(char *dict_file)
+void	ft_putchar(char c)
 {
-	char	*dict_str;
-	t_nbr	*array;
-
-	if (!(dict_str = read_file(dict_file)))
-		return (0);
-	if (!(array = ft_str_to_sdic(dict_str)))
-		return (0);
-	return (array);
+	write(1, &c, 1);
 }

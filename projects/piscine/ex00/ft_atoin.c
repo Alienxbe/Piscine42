@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_std_input.c                                   :+:      :+:    :+:   */
+/*   ft_atoin.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcammaro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/27 13:27:55 by rcammaro          #+#    #+#             */
-/*   Updated: 2020/09/27 15:03:21 by rcammaro         ###   ########.fr       */
+/*   Created: 2020/09/27 13:15:02 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/27 22:48:33 by rcammaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
-
-char	*read_stdin(char *str)
+int		ft_atoin(char *str, int n)
 {
-	int		ret;
+	int nbr;
 
-	ret = read(0, str, BUF_SIZE);
-	if (ret == -1)
-		return (0);
-	str[ret] = '\0';
-	return (str);
+	nbr = 0;
+	while (n--)
+	{
+		nbr = nbr * 10 + (*str - '0');
+		str++;
+	}
+	return (nbr);
 }

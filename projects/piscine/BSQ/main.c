@@ -5,36 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/26 16:40:33 by rcammaro          #+#    #+#             */
-/*   Updated: 2020/09/27 21:25:44 by mykman           ###   ########.fr       */
+/*   Created: 2020/09/29 02:37:11 by mykman            #+#    #+#             */
+/*   Updated: 2020/09/29 07:09:22 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "ft.h"
 
-int	main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	char	*nbr;
-	char	*dict_file;
-	t_nbr	*array;
-	char	str_stdin[BUF_SIZE];
-
-	if (argc > 3)
-		return (error_usage());
-	if (argc == 1)
+	char	*grid;
+	int		i;
+	
+	i = 0;
+	if (argc < 2)
+		return (1);
+	while (++i < argc)
 	{
-		if (!(nbr = read_stdin(str_stdin)))
-			return (error_stdin());
+		if (!(grid = ft_read_file(argv[i])))
+			return (1);
+		ft_putstr(grid);
+		ft_putchar('\n');
 	}
-	else
-		nbr = argv[argc - 1];
-	dict_file = (argc == 3) ? argv[1] : "numbers.dict";
-	if (!(array = load_dictionary(dict_file)))
-		return (1);
-	if (!(ft_check_input_to_text(nbr, array)))
-		return (1);
-	ft_input_to_text(nbr, array);
-	ft_putstr("\n");
-	free_dict(array);
 	return (0);
 }

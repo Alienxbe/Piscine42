@@ -6,11 +6,11 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 00:41:12 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/29 00:53:18 by mykman           ###   ########.fr       */
+/*   Updated: 2020/09/29 02:10:03 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft.h"
 
 void	ft_putchar(char c)
 {
