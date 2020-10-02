@@ -6,12 +6,15 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 01:01:57 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/28 04:14:41 by mykman           ###   ########.fr       */
+/*   Updated: 2020/10/01 21:00:38 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-	while (--length)
-		(*f)(*tab++);
+	int i;
+
+	i = -1;
+	while (++i < length)
+		f(tab[i]);
 }

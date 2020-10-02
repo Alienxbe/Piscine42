@@ -6,14 +6,14 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 02:07:09 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/29 02:11:16 by mykman           ###   ########.fr       */
+/*   Updated: 2020/10/01 14:50:19 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_H
 # define FT_H
 
-#include <unistd.h>
+# include <unistd.h>
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);

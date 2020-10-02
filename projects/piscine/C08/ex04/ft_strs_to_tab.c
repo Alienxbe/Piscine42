@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strs_to_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 18:28:10 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/23 10:59:24 by mykman           ###   ########.fr       */
+/*   Updated: 2020/09/30 18:56:56 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_stock_str.h"
 
-int		ft_strlen(char *str)
+int					ft_strlen(char *str)
 {
 	int size;
 
@@ -23,7 +23,7 @@ int		ft_strlen(char *str)
 	return (size);
 }
 
-char	*ft_strcpy(char *src)
+char				*ft_strcpy(char *src)
 {
 	char	*dest;
 	int		c;
@@ -42,8 +42,8 @@ char	*ft_strcpy(char *src)
 
 struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
-	struct s_stock_str *tab;
-	int i;
+	struct s_stock_str	*tab;
+	int					i;
 
 	if (!(tab = malloc(sizeof(t_stock_str) * (ac + 1))))
 		return (NULL);

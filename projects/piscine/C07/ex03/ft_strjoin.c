@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 16:11:03 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/25 19:35:23 by mykman           ###   ########.fr       */
+/*   Updated: 2020/10/01 16:34:00 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,15 @@ int		ft_strlen(char *src)
 	return (len);
 }
 
-int		ft_tot_len(int size, char **strs, int len_sep)
+char	*ft_strcpy(char *dest, char *src)
 {
 	int i;
-	int tot_len;
 
-	tot_len = 0;
 	i = -1;
-	while (++i < size)
-		tot_len += ft_strlen(strs[i]) + len_sep;
-	return (tot_len);
+	while (src[++i])
+		dest[i] = src[i];
+	dest[i] = '\0';
+	return (dest);
 }
 
 char	*ft_strjoin(int size, char **strs, char *sep)
@@ -39,23 +38,24 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	char	*str;
 	int		i;
 	int		j;
-	int		l;
 
-	if (size == 0)
-		return ("");
-	if (!(str = malloc(sizeof(char)
-		* (ft_tot_len(size, strs, ft_strlen(sep)) - ft_strlen(sep) + 1))))
+	i = 0;
+	j = 0;
+	while (i < size)
+		j += ft_strlen(strs[i++]);
+	if (size > 0)
+		j += (size - 1) * ft_strlen(sep);
+	if (!(str = malloc(sizeof(char) * (j + 1))))
 		return (0);
-	i = -1;
-	l = 0;
-	while (++i < size)
+	i = 0;
+	j = 0;
+	while (i < size)
 	{
-		while (*strs[i])
-			str[l++] = *strs[i]++;
-		j = -1;
-		while (++j < ft_strlen(sep) && (i < size - 1))
-			str[l++] = sep[j];
+		ft_strcpy(str + j, strs[i]);
+		j += ft_strlen(strs[i]);
+		if (++i < size)
+			j += str + j + ft_strlen(sep) - ft_strcpy(str + j, sep);
 	}
-	str[l] = 0;
+	str[j] = 0;
 	return (str);
 }

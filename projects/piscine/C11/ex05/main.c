@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 02:50:03 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/28 03:56:36 by mykman           ###   ########.fr       */
+/*   Updated: 2020/10/01 21:15:06 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int		ft_error_check(char **argv, char *operators, int b)
 	if (ft_index(argv[2][0], operators) == -1)
 	{
 		ft_putnbr(0);
+		ft_putchar('\n');
 		return (1);
 	}
 	else if (ft_index(argv[2][0], operators) == 3 && b == 0)

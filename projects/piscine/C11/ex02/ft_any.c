@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 02:30:33 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/28 04:13:03 by mykman           ###   ########.fr       */
+/*   Updated: 2020/10/01 21:02:05 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@ int		ft_any(char **tab, int (*f)(char*))
 {
 	int i;
 
+	i = 0;
 	while (tab[i])
 		if ((*f)(tab[i++]))
 			return (1);

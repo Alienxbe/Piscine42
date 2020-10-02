@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 15:21:56 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/23 18:36:22 by mykman           ###   ########.fr       */
+/*   Updated: 2020/10/01 20:04:38 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_hexa(char c)
+void	ft_hexa(unsigned char c)
 {
 	char *base;
 
@@ -30,7 +30,7 @@ void	ft_putstr_non_printable(char *str)
 {
 	while (*str)
 	{
-		if (*str < ' ' || *str == '~')
+		if (*str < ' ' || *str == 127)
 		{
 			ft_putchar('\\');
 			ft_hexa(*str);

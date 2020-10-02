@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 03:57:56 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/28 04:19:59 by mykman           ###   ########.fr       */
+/*   Updated: 2020/10/01 21:41:46 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_sort_string_tab(char **tab)
 		if (ft_strcmp(*ptr, *(ptr + 1)) > 0)
 		{
 			ft_swap(ptr, ptr + 1);
-			ptr = tab;
+			ptr = tab - 1;
 		}
 		ptr++;
 	}

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 18:10:16 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/22 18:16:37 by mykman           ###   ########.fr       */
+/*   Updated: 2020/09/30 18:52:24 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_ABS_H
 # define FT_ABS_H
 
-# define ABS(Value) ((Values >= 0) ? Values : -Values)
+# define ABS(Value) ((Value >= 0) ? Value : -Value)
 
 #endif

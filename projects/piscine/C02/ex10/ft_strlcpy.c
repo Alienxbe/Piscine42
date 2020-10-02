@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 14:41:24 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/23 17:38:47 by mykman           ###   ########.fr       */
+/*   Updated: 2020/10/01 18:55:05 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int				ft_strlen(char *str)
+unsigned int	ft_strlen(char *str)
 {
-	int c;
+	unsigned int c;
 
 	c = 0;
 	while (str[c])
@@ -22,14 +22,22 @@ int				ft_strlen(char *str)
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	unsigned int c;
+	unsigned int i;
+	unsigned int j;
 
-	c = 0;
-	while (src[c] && c < size - 1)
+	i = ft_strlen(src);
+	if (i + 1 < size)
 	{
-		dest[c] = src[c];
-		c++;
+		j = -1;
+		while (++j < i + 1)
+			dest[j] = src[j];
 	}
-	dest[c] = 0;
-	return ((unsigned int)ft_strlen(src));
+	else if (size)
+	{
+		j = -1;
+		while (++j < size - 1)
+			dest[j] = src[j];
+		dest[j] = '\0';
+	}
+	return (i);
 }

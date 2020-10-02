@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 18:51:11 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/28 11:29:50 by mykman           ###   ########.fr       */
+/*   Updated: 2020/10/01 16:33:51 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,15 @@ int		ft_ultimate_range(int **range, int min, int max);
 char	*ft_strjoin(int size, char **strs, char *sep);
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to);
 char	**ft_split(char *src, char *charset);
+int		ft_tot_len(int size, char **strs, char *sep);
+int		ft_word_count(char *str, char *charset);
 
 int		main(void)
 {
-	char	*base_to = "01";
-	char	*base_from = "0123456789";
+	char **tab;
+	char *str = "Bonjour comment tu va ";
 
-	printf("%s\n", ft_convert_base("10", base_from, base_to));
+	tab = ft_split(str, " ");
+	printf("%s\n", ft_strjoin(4, tab, ", "));
 	return (0);
 }
