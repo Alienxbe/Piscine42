@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.19.be>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 04:52:55 by mykman            #+#    #+#             */
-/*   Updated: 2020/09/28 04:56:13 by mykman           ###   ########.fr       */
+/*   Updated: 2020/10/05 03:05:35 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,5 @@ typedef struct		s_list
 	struct s_list	*next;
 	void			*data;
 } 					t_list;
-
-t_list		*ft_create_elem(void *data);
 
 #endif
